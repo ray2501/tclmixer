@@ -48,7 +48,7 @@ int TclMixer_Sound(ClientData clientData, Tcl_Interp* interp, int objc, Tcl_Obj 
 	}
 
 	int i, sw = 0;
-	char key[10];
+	char key[18];
 
 	Tcl_HashEntry* entry;
 	for ( i= 0; !sw; i++)
@@ -88,7 +88,7 @@ int TclMixer_Music(ClientData clientData, Tcl_Interp* interp, int objc, Tcl_Obj 
 	}
 
 	int i, sw = 0;
-	char key[10];
+	char key[18];
 
 	Tcl_HashEntry* entry;
 	for ( i= 0; !sw; i++)
@@ -794,7 +794,7 @@ int Tclmixer_Init(Tcl_Interp* interp)
 {
 #ifdef USE_TCL_STUBS
 	// Initialising stubs engine
-	if (Tcl_InitStubs(interp, "8.4", 0) == NULL)
+	if (Tcl_InitStubs(interp, TCL_VERSION, 0) == NULL)
 		return TCL_ERROR;
 #endif
 
@@ -822,23 +822,23 @@ int Tclmixer_Init(Tcl_Interp* interp)
 	Tcl_InitHashTable(&musics, TCL_STRING_KEYS);
 
 	// Register Tcl commands
-	Tcl_CreateObjCommand(interp, "tclmixer::sound", TclMixer_Sound, NULL, NULL);
-	Tcl_CreateObjCommand(interp, "tclmixer::music", TclMixer_Music, NULL, NULL);
-	Tcl_CreateObjCommand(interp, "tclmixer::free", TclMixer_Free, NULL, NULL);
-	Tcl_CreateObjCommand(interp, "tclmixer::play", TclMixer_Play, NULL, NULL);
-	Tcl_CreateObjCommand(interp, "tclmixer::stop", TclMixer_Stop, NULL, NULL);
-	Tcl_CreateObjCommand(interp, "tclmixer::volume", TclMixer_Volume, NULL, NULL);
-	Tcl_CreateObjCommand(interp, "tclmixer::fadeOut", TclMixer_FadeOut, NULL, NULL);
-	Tcl_CreateObjCommand(interp, "tclmixer::fading", TclMixer_IsFading, NULL, NULL);
-	Tcl_CreateObjCommand(interp, "tclmixer::playing", TclMixer_IsPlaying, NULL, NULL);
-	Tcl_CreateObjCommand(interp, "tclmixer::paused", TclMixer_IsPaused, NULL, NULL);
-	Tcl_CreateObjCommand(interp, "tclmixer::balance", TclMixer_Balance, NULL, NULL);
-	Tcl_CreateObjCommand(interp, "tclmixer::distance", TclMixer_Distance, NULL, NULL);
-	Tcl_CreateObjCommand(interp, "tclmixer::position", TclMixer_Position, NULL, NULL);
-	Tcl_CreateObjCommand(interp, "tclmixer::playPosition", TclMixer_PlayPosition, NULL, NULL);
-	Tcl_CreateObjCommand(interp, "tclmixer::rewind", TclMixer_Rewind, NULL, NULL);
-	Tcl_CreateObjCommand(interp, "tclmixer::musicType", TclMixer_MusicType, NULL, NULL);
-	Tcl_CreateObjCommand(interp, "tclmixer::mixConfig", TclMixer_MixConfig, NULL, NULL);
+	Tcl_CreateObjCommand(interp, "::tclmixer::sound", TclMixer_Sound, NULL, NULL);
+	Tcl_CreateObjCommand(interp, "::tclmixer::music", TclMixer_Music, NULL, NULL);
+	Tcl_CreateObjCommand(interp, "::tclmixer::free", TclMixer_Free, NULL, NULL);
+	Tcl_CreateObjCommand(interp, "::tclmixer::play", TclMixer_Play, NULL, NULL);
+	Tcl_CreateObjCommand(interp, "::tclmixer::stop", TclMixer_Stop, NULL, NULL);
+	Tcl_CreateObjCommand(interp, "::tclmixer::volume", TclMixer_Volume, NULL, NULL);
+	Tcl_CreateObjCommand(interp, "::tclmixer::fadeOut", TclMixer_FadeOut, NULL, NULL);
+	Tcl_CreateObjCommand(interp, "::tclmixer::fading", TclMixer_IsFading, NULL, NULL);
+	Tcl_CreateObjCommand(interp, "::tclmixer::playing", TclMixer_IsPlaying, NULL, NULL);
+	Tcl_CreateObjCommand(interp, "::tclmixer::paused", TclMixer_IsPaused, NULL, NULL);
+	Tcl_CreateObjCommand(interp, "::tclmixer::balance", TclMixer_Balance, NULL, NULL);
+	Tcl_CreateObjCommand(interp, "::tclmixer::distance", TclMixer_Distance, NULL, NULL);
+	Tcl_CreateObjCommand(interp, "::tclmixer::position", TclMixer_Position, NULL, NULL);
+	Tcl_CreateObjCommand(interp, "::::tclmixer::playPosition", TclMixer_PlayPosition, NULL, NULL);
+	Tcl_CreateObjCommand(interp, "::tclmixer::rewind", TclMixer_Rewind, NULL, NULL);
+	Tcl_CreateObjCommand(interp, "::tclmixer::musicType", TclMixer_MusicType, NULL, NULL);
+	Tcl_CreateObjCommand(interp, "::tclmixer::mixConfig", TclMixer_MixConfig, NULL, NULL);
 
 	Tcl_Eval(interp, "namespace eval tclmixer {namespace export *}");
 
