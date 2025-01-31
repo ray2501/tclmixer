@@ -4,7 +4,7 @@
 
 Name:          tclmixer
 Summary:       SDL_mixer (SDL) bindings for Tcl
-Version:       2.0.1
+Version:       2.0.2
 Release:       0
 License:       LGPL-2.1-only
 Group:         Development/Libraries/Tcl

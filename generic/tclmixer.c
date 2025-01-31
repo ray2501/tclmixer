@@ -17,7 +17,7 @@ extern DLLEXPORT int Tclmixer_Init(Tcl_Interp * interp);
 }
 #endif
 
-#define TCLMIXER_VERSION "2.0.1"
+#define TCLMIXER_VERSION "2.0.2"
 
 #ifdef WINDOWS
 #define BUFFER 4096
