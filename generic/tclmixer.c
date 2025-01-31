@@ -835,7 +835,7 @@ int Tclmixer_Init(Tcl_Interp* interp)
 	Tcl_CreateObjCommand(interp, "::tclmixer::balance", TclMixer_Balance, NULL, NULL);
 	Tcl_CreateObjCommand(interp, "::tclmixer::distance", TclMixer_Distance, NULL, NULL);
 	Tcl_CreateObjCommand(interp, "::tclmixer::position", TclMixer_Position, NULL, NULL);
-	Tcl_CreateObjCommand(interp, "::::tclmixer::playPosition", TclMixer_PlayPosition, NULL, NULL);
+	Tcl_CreateObjCommand(interp, "::tclmixer::playPosition", TclMixer_PlayPosition, NULL, NULL);
 	Tcl_CreateObjCommand(interp, "::tclmixer::rewind", TclMixer_Rewind, NULL, NULL);
 	Tcl_CreateObjCommand(interp, "::tclmixer::musicType", TclMixer_MusicType, NULL, NULL);
 	Tcl_CreateObjCommand(interp, "::tclmixer::mixConfig", TclMixer_MixConfig, NULL, NULL);
