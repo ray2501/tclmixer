@@ -13,7 +13,7 @@ URL:           https://github.com/ray2501/tclmixer
 BuildRequires: autoconf
 BuildRequires: make
 BuildRequires: tcl-devel >= 8.4
-BuildRequires: libSDL2-devel
+BuildRequires: sdl2-compat-devel
 BuildRequires: libSDL2_mixer-devel
 Requires:      tcl >= 8.4
 BuildRoot:     %{buildroot}
